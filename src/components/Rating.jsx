@@ -5,8 +5,8 @@ export const Rating = () => {
     <div>
       <h1>Sorted Movies:</h1>
       <ul>
-        {sortedMovies.map((film) => (
-          <li key={film.id}>
+        {sortedMovies.map((film, id) => (
+          <li key={id}>
             {film.title} ({film.imdbRating})
           </li>
         ))}

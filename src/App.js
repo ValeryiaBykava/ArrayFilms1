@@ -2,41 +2,71 @@ import {Genres} from "./components/Genres"
 import {Actors} from "./components/Actors"
 import {Rating} from "./components/Rating"
 import {NewArray} from "./components/NewArray"
-import films from "./films.json";
+import {FilterMoviesByYear} from "./components/FilterMoviesByYear"
+import {FilterMoviesByName} from "./components/FilterMoviesByName"
+import {FilterMoviesByPlot} from "./components/FilterMoviesByPlot"
+// import {FilterMoviesArrayString} from "./components/FilterMoviesArrayString"
+import {GenresTask} from "./components/Tasks"
+import {ActorsTask} from "./components/Tasks"
+import {RatingTask} from "./components/Tasks"
+import {NewArrayTask} from "./components/Tasks"
+import {FilterMoviesByYearTask} from "./components/Tasks"
+import {FilterMoviesByNameTask} from "./components/Tasks"
+import {FilterMoviesByPlotTask} from "./components/Tasks"
+// import {FilterMoviesArrayStringTask} from "./components/Tasks"
+
 import './App.css';
 
-const titleYear = films.map((film) => {
-        return {        
-          title: film.title,
-          year: film.year,
-        };
-      })
-console.log(titleYear);
-
-function FilterMoviesByYear({titleYear}) {
-  return (
-  <div>
-      <h2>Films+year</h2>
-      <ul>
-        {titleYear.map((titleYe) => (
-          <li>Films: {titleYe.title} Year: {titleYe.year}</li>
-        ))}
-      </ul>
-    </div>)
-  }
-  
-  // const filteredMovies = filterMoviesByYear(films);
-  // console.log(filteredMovies);
 
 function App() {
   return (
     <div>
-      <Genres/>
-      <Actors/>
-      <Rating/>
-      <NewArray/>
-      <FilterMoviesByYear titleYear={titleYear} />
-      {/* {filterMoviesByYear(films)} */}
+      <div>
+        <GenresTask/>
+        <Genres/>
+      </div>
+      <hr/>
+      <div>
+        <ActorsTask/>
+        <Actors/>
+      </div>
+      <hr/>
+      <div>
+        <RatingTask/>
+        <Rating/>
+      </div>
+      <hr/>
+      <div>
+        <NewArrayTask/>
+        <NewArray/>
+      </div>
+      <hr/>
+      <div>
+        <FilterMoviesByYearTask/>
+        <FilterMoviesByYear/>
+      </div>
+      <hr/>
+      <div>
+        <FilterMoviesByNameTask/>
+        <FilterMoviesByName/>
+      </div>
+      <hr/>
+      <div>
+        <FilterMoviesByPlotTask/>
+        <FilterMoviesByPlot/>
+      </div>
+      <hr/>
+      {/* <div>
+        <FilterMoviesArrayStringTask/>
+        <FilterMoviesArrayString/>
+      </div> */}
+   
+      
+      
+      
+      
+    
+      
     </div>
   );
 }

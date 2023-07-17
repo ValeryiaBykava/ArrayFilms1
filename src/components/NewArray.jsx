@@ -4,8 +4,8 @@ export const NewArray = () => {
     <div>
       <h1>New Movies:</h1>
       <ul>
-        {NewObjectFilm.map((film) => (
-          <li>
+        {NewObjectFilm.map((film, id) => (
+          <li key={id}>
             id: {film.id} title: {film.title} released: {film.released} plot:{film.plot}
           </li>
         ))}
